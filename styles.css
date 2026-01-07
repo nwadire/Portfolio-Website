@@ -461,4 +461,3 @@ form {
     transform: scale(1.2); 
 
 } 
-/* 📱 Media Queries */ @media (max-width: 768px) { .site-header { flex-direction: column; align-items: center; } .site-header .nav { justify-content: center; } .container { flex-direction: column; gap: 20px; } .aboutme-image { max-width: 100%; } .profile { font-size: 2rem; } .skills, .Tools { font-size: 2rem; } .Projects-title, .my-project { font-size: 1.5rem; }
