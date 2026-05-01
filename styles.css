@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
     margin: 0;              /* remove default margin */
     padding: 0;             /* remove default padding */
@@ -129,6 +131,7 @@ body {
 }
 
 .buttons-1 {
+    border: 2px solid #000;
     background: #502f4b;
     color: #ffffff;
     padding: 12px 28px;
@@ -280,19 +283,33 @@ body {
     margin-bottom: 40px;
 }
 .my-project{
-     font-size: 36px;
+    font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
 }
+.projects-showcase {
+    padding: 0 20px 40px;
+}
+
+.projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
 /* Project Card */
 .project-card {
     background-color: #e8ddd3;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 20px;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
     margin: 20px auto;
-    max-width: 800px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -300,27 +317,44 @@ body {
     transform: scale(1.02);
     background-color:#c3b5a8 ;
 }
-.project-1 {
-    margin-top: 20px;
+
+.project-image-wrapper {
+    height: 210px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .project-image {
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-width: none;
+    border-radius: 0;
+    margin-bottom: 0;
 }
+
+.project-content {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
 .project-title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
     color: #502f4b;
+    margin: 0;
 }
 .project-description {
     font-size: 16px;
     color: #333;
-    margin-bottom: 15px;
+    margin: 0;
+    line-height: 1.5;
+    flex: 1;
 }
 .project-links {
     display: inline-block;
@@ -348,23 +382,12 @@ body {
 }
 
 .resume-button-container {
-    background: #502f4b;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 12px 20px;
-    border-radius: 15px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 1.0s ease;
-    display: inline-block;
-    width: 200px;
     text-align: center;
-    
 }
 
-.resume-button-container:hover { 
-    background-color: #ffffff;
-    color: #000000;
+.resume-contact-actions {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 /* Contact Form Styling */
@@ -459,5 +482,19 @@ form {
 }
 .icon:hover { 
     transform: scale(1.2); 
+}
+@media (max-width: 991.98px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
-} 
+@media (max-width: 575.98px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: auto;
+    }
+}
